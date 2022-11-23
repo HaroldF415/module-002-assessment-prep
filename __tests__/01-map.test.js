@@ -26,7 +26,7 @@ describe("mapSongTitles()", () => {
     let songs;
     beforeEach(() => {
       jest.resetModules();
-      songs = require("../data/song");
+      songs = require("../data/songs");
     });
   
     test("should use the `.map()` method", () => {
@@ -56,7 +56,7 @@ describe("mapSongDetails()", () => {
   let songs;
   beforeEach(() => {
     jest.resetModules();
-    songs = require("../data/song");
+    songs = require("../data/songs");
   });
 
   test("should use the `.map()` method", () => {
@@ -86,7 +86,7 @@ describe("mapTitleAndArtist()", () => {
   let songs;
   beforeEach(() => {
     jest.resetModules();
-    songs = require("../data/song");
+    songs = require("../data/songs");
   });
 
   test("should use the `.map()` method", () => {

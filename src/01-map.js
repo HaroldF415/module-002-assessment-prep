@@ -1,7 +1,7 @@
 /**
- * DON'T TOUCH THE LINE BELOW!!!
+ * DON'T TOUCH THE LINES BELOW!!!
  */
-const songData = require("../data/song");
+const songData = require("../data/songs");
 const { nums, words } = require("../data/data");
 const examplePokemon = require("../data/poke");
 
@@ -12,7 +12,6 @@ const examplePokemon = require("../data/poke");
  * 
  * MUST USE '.map()'
  */
-
 const mapSongTitles = ( songs ) => {};
 
 /**
@@ -26,7 +25,6 @@ const mapSongTitles = ( songs ) => {};
  * 
  *  MUST USE '.map()'
  */
-
 const mapSongDetails = (songs) => {};
 
 /**
@@ -40,7 +38,6 @@ const mapSongDetails = (songs) => {};
  * 
  * MUST USE '.map()'
  */
-
 const mapTitleAndArtist = (songs) => {};
 
 /**
