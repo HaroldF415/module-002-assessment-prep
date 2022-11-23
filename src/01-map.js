@@ -106,6 +106,19 @@ const mapCountByType = (pokemon) => {};
  */
 const mapAverageTotalStatScore = (pokemon) => {};
 
+/**
+ * getHighestAttackStatScore()
+ * -----------------------------
+ * Returns the highest `attack` stat score among all Pokemon. If the inputted `pokemon` array is empty, return `0`.
+ * @param {Object[]} pokemon - An array of Pokemon. See the `poke.js` file for an example of this array.
+ * @returns {number} The highest `attack` stat of all Pokemon.
+ *
+ * EXAMPLE:
+ *  getHighestAttackStatScore(pokemon);
+ *  //> 134
+ */
+const mapHighestAttackScore = (pokemon) => {};
+
 module.exports = {
     mapSongTitles,
     mapSongDetails,
@@ -114,4 +127,5 @@ module.exports = {
     mapArrayWordsUpperCased,
     mapCountByType,
     mapAverageTotalStatScore,
+    mapHighestAttackScore,
 };

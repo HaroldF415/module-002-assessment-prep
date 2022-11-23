@@ -5,12 +5,22 @@ const {
     mapArrayValuesSquaredTimesIndex,
     mapArrayWordsUpperCased,
     mapCountByType,
-    mapAverageTotalStatScore, 
+    mapAverageTotalStatScore,
+    mapHighestAttackScore, 
 } = require("../src/01-map");
 
 const { nums, words } = require("../data/data.js");
 const pokemon = require("../data/poke");
 const shuffledPokemon = require("../data/poke_remix");
+
+console.log(`
+.--.
+|__| .--------------.
+|=.| |.-------------.|
+|--| || Let's Code! ||
+|  | |'-------------'|
+|__|~')_____________('
+`)
 
 describe("mapSongTitles()", () => {
     let songs;
@@ -194,7 +204,7 @@ describe("mapCountByType()", () => {
 
 });
 
-describe.only("mapAverageTotalStatScore()", () => {
+describe("mapAverageTotalStatScore()", () => {
 
   test("should use the `.map()` method", () => {
     const hasMap = !!mapAverageTotalStatScore.toString().match(/\.map(\s*\(|\()/g);
@@ -217,6 +227,54 @@ describe.only("mapAverageTotalStatScore()", () => {
       const actual = mapAverageTotalStatScore([]);
       const expected = 0;
       expect(actual).toBeCloseTo(expected, 2);
+  });
+
+  test("BONUS ROUND!! should use the `.reduce()` method as well!!", () => {
+    const hasReduce = !!mapAverageTotalStatScore.toString().match(/\.reduce(\s*\(|\()/g);
+    expect(hasReduce).toBeTruthy();
+  });
+
+});
+
+describe("mapHighestAttackScore", () => {
+
+  test("should use the `.map()` method", () => {
+    const hasMap = !!mapHighestAttackScore.toString().match(/\.map(\s*\(|\()/g);
+    expect(hasMap).toBeTruthy();
+  });
+
+  test("should return the highest attack stat score among all Pokemon as a number", () => {
+      const actual = mapHighestAttackScore(pokemon);
+      const expected = 134;
+      expect(actual).toEqual(expected);
+  });
+
+  test("should dynamically change depending on the pokemon inputted", () => {
+      const actual = mapHighestAttackScore(shuffledPokemon);
+      const expected = 105;
+      expect(actual).toEqual(expected);
+  });
+
+  test("should return `0` if there are no pokemon", () => {
+      const actual = mapHighestAttackScore([]);
+      const expected = 0;
+      expect(actual).toEqual(expected);
+  });
+
+  test("BONUS ROUND: should use the `.Math.max()` method", () => {
+    const hasMath = !!mapHighestAttackScore.toString().match(/\Math.max(\s*\(|\()/g);
+    expect(hasMath).toBeTruthy();
+  });
+
+  test("EXTRA BONUS ROUND: should use the `.reduce()` method", () => {
+    const hasReduce = !!mapHighestAttackScore.toString().match(/\.reduce(\s*\(|\()/g);
+    expect(hasReduce).toBeTruthy();
+  });
+
+  test("EXTRA EXTRA BONUS ROUND: can you do it in less than 140 characters?", () => {
+    const characterMatch = mapHighestAttackScore.toString().length;
+    const expected = 136;
+    expect(characterMatch).toBeCloseTo(expected, 140)
   });
 
 });
