@@ -4,6 +4,7 @@ const {
     filterTitleTracks,
     filterByGenre,
     filterAllMoviesReleasedAtOrBeforeYear,
+    filterByDirector,
 } = require("../src/02-filter");
 
 const { nums, words } = require("../data/data.js");
@@ -226,7 +227,7 @@ describe("filterAllMoviesReleasedAtOrBeforeYear()", () => {
     test("should use the `.filter()` method", () => {
         const hasFilter = !!filterAllMoviesReleasedAtOrBeforeYear.toString().match(/\.filter(\s*\(|\()/g);
         expect(hasFilter).toBeTruthy();
-      });
+    });
 
     test("should return all movies where the `released` date is equal to or less than the year given", () => {
       const year = 2000;
@@ -238,6 +239,7 @@ describe("filterAllMoviesReleasedAtOrBeforeYear()", () => {
       ];
       expect(actual).toEqual(expected);
     });
+
     test("should dynamically change depending on the year inputted", () => {
       const year = 1950;
       const actual = filterAllMoviesReleasedAtOrBeforeYear(movies, year);
@@ -246,6 +248,7 @@ describe("filterAllMoviesReleasedAtOrBeforeYear()", () => {
       ];
       expect(actual).toEqual(expected);
     });
+
     test("should dynamically change depending on the movies inputted", () => {
       const year = 2017;
       const actual = filterAllMoviesReleasedAtOrBeforeYear(alternative, year);
@@ -256,12 +259,14 @@ describe("filterAllMoviesReleasedAtOrBeforeYear()", () => {
       ];
       expect(actual).toEqual(expected);
     });
+
     test("should return an empty array if no movies were released at or before the given year", () => {
       const year = 1940;
       const actual = filterAllMoviesReleasedAtOrBeforeYear(movies, year);
       const expected = [];
       expect(actual).toEqual(expected);
     });
+
     test("should return an empty array if there are no movies", () => {
       const year = 2000;
       const actual = filterAllMoviesReleasedAtOrBeforeYear([], year);
@@ -273,5 +278,52 @@ describe("filterAllMoviesReleasedAtOrBeforeYear()", () => {
         const hasReverse = !!filterAllMoviesReleasedAtOrBeforeYear.toString().match(/\.reverse(\s*\(|\()/g);
         expect(hasReverse).toBeTruthy();
     });
+
+});
+
+describe("filterByDirector()", () => {
+
+    test("should use the `.filter()` method", () => {
+        const hasFilter = !!filterByDirector.toString().match(/\.filter(\s*\(|\()/g);
+        expect(hasFilter).toBeTruthy();
+    });    
+
+    test("should return an empty array if there are no movies", () => {
+        const director = "Akira Kurosawa";
+        const actual = filterByDirector([], director);
+        const expected = [];
+        expect(actual).toEqual(expected);
+      });
+
+      test("should return an empty array if the 'director' name does not match any movie", () => {
+        const director = "Akira Kurosawa";
+        const actual = filterByDirector(movies, director);
+        const expected = [];
+        expect(actual).toEqual(expected);
+      });
+
+      test("should return all movies where the `director` is equal to the director name given", () => {
+        const director = "Brad Bird";
+        const actual = filterByDirector(movies, director);
+        const expected = [
+          movies[3], // The Incredibles
+        ];
+        expect(actual).toEqual(expected);
+      });
+
+      test("should dynamically change depending on the movies inputted", () => {
+        const director = "Patty Jenkins";
+        const actual = filterByDirector(alternative, director);
+        const expected = [
+          alternative[1], // Wonder Woman
+        ];
+        expect(actual).toEqual(expected);
+      });
+
+      test("BONUS ROUND: can you do it in less than 110 characters?", () => {
+        const characterMatch = filterByDirector.toString().length;
+        const expected = 109;
+        expect(characterMatch).toBeCloseTo(expected, 113)
+      });
 
 });
