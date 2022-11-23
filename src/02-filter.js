@@ -86,5 +86,3 @@ module.exports = {
     filterAllMoviesReleasedAtOrBeforeYear,
     filterByDirector,
 };
-
-console.log( filterByDirector( movies, "Brad Bird" ) );

@@ -1,15 +1,27 @@
-const forEachWordOver10Count = ( words ) => {
-  
-let count = 0;
+/**
+ * DO NOT CHANGE THE LINE BELOW
+ */
 
-words.forEach( word => word.length > 10 ? count++ : count + 0 );
+const { nums, words } = require("../data/data");
 
-return count;
+const forEachWordOver4Count = ( words ) => {}; 
   
-}; 
+const forEachWordWithExclamation = ( words ) => {
   
-  const logWordsWithExclamation = ( words ) => {
-    
-    return words.forEach( word => console.log( `${word}!` ) );
-  
-  }; // ends logWordsWithExclamation()
+  return words.forEach( word => console.log( `${word}!` ) );
+
+};
+
+const forEachSongPrintDetails = ( songs ) => {
+
+  // return songs.forEach( song => console.log( `${song.title} by ${song.artist}` ) );
+
+};
+
+module.exports = {
+
+  forEachWordOver4Count,
+  forEachWordWithExclamation,
+  forEachSongPrintDetails,
+
+};
