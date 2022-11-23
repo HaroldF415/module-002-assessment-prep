@@ -3,6 +3,7 @@
  */
 const songData = require("../data/song");
 const { nums, words } = require("../data/data");
+const examplePokemon = require("../data/poke");
 
 /**
  * Returns an array of all of the song titles.
@@ -60,10 +61,42 @@ const mapArrayValuesSquaredTimesIndex = (nums) => {};
  */
 const mapArrayWordsUpperCased = (words) => {};
 
+/**
+ * countByType()
+ * -----------------------------
+ * Returns an object where the keys are Pokemon types and the values are the number of Pokemon in the array with that type. If the inputted `pokemon` array is empty, return `{}`.
+ * @param {Object[]} pokemon - An array of Pokemon. See the `poke.js` file for an example of this array.
+ * @returns {Object} An object where keys are Pokemon types (e.g. "Water") and the values are how many Pokemon in the array have that type (e.g. 22).
+ *
+ * EXAMPLE:
+ *  countByType(pokemon);
+ *  //> {
+        Grass: 11,
+        Poison: 14,
+        Fire: 8,
+        Flying: 12,
+        Water: 22,
+        Bug: 8,
+        Normal: 14,
+        Electric: 5,
+        Ground: 10,
+        Steel: 3,
+        Fairy: 5,
+        Fighting: 5,
+        Psychic: 13,
+        Rock: 4,
+        Ice: 4,
+        Ghost: 2,
+        Dragon: 3
+    };
+ */
+const mapCountByType = (pokemon) => {};
+
 module.exports = {
     mapSongTitles,
     mapSongDetails,
     mapTitleAndArtist,
     mapArrayValuesSquaredTimesIndex,
     mapArrayWordsUpperCased,
+    mapCountByType,
 };
