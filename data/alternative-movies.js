@@ -1,0 +1,168 @@
+const movies = [
+  {
+    actors: "Chadwick Boseman, Michael B. Jordan, Lupita Nyong'o, Danai Gurira",
+    awards: "Won 3 Oscars. Another 111 wins & 277 nominations.",
+    boxOffice: "$700,426,566",
+    country: "USA, South Africa",
+    releasedOnDVD: "02 May 2018",
+    director: "Ryan Coogler",
+    genre: "Action, Adventure, Sci-Fi",
+    language: "English, Swahili, Nama, Xhosa, Korean",
+    metascore: "88",
+    plot: "T'Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger from his country's past.",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
+    production: "Walt Disney Pictures",
+    rated: "PG-13",
+    ratings: [
+      {
+        source: "Internet Movie Database",
+        value: "7.3/10",
+      },
+      {
+        source: "Rotten Tomatoes",
+        value: "96%",
+      },
+      {
+        source: "Metacritic",
+        value: "88/100",
+      },
+    ],
+    released: "16 Feb 2018",
+    response: "True",
+    runtime: "134 min",
+    title: "Black Panther",
+    type: "movie",
+    website: "N/A",
+    writer:
+      "Ryan Coogler, Joe Robert Cole, Stan Lee (based on the Marvel comics by), Jack Kirby (based on the Marvel Comics by)",
+    imdbID: "tt1825683",
+    imdbRating: "7.3",
+    imdbVotes: "654,862",
+  },
+  {
+    actors: "Gal Gadot, Chris Pine, Connie Nielsen, Robin Wright",
+    awards: "26 wins & 72 nominations.",
+    boxOffice: "$412,815,408",
+    country: "USA, UK",
+    releasedOnDVD: "10 Jul 2017",
+    director: "Patty Jenkins",
+    genre: "Action, Adventure, Fantasy, Sci-Fi, War",
+    language:
+      "English, German, Dutch, Flemish, French, Spanish, Chinese, Greek,  Ancient (to 1453), North American Indian",
+    metascore: "76",
+    plot: "When a pilot crashes and tells of conflict in the outside world, Diana, an Amazonian warrior in training, leaves home to fight a war, discovering her full powers and true destiny.",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BMTYzODQzYjQtNTczNC00MzZhLTg1ZWYtZDUxYmQ3ZTY4NzA1XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+    production: "Atlas Entertainment, Cruel and Unusual",
+    rated: "PG-13",
+    ratings: [
+      {
+        source: "Internet Movie Database",
+        value: "7.4/10",
+      },
+      {
+        source: "Rotten Tomatoes",
+        value: "93%",
+      },
+      {
+        source: "Metacritic",
+        value: "76/100",
+      },
+    ],
+    released: "02 Jun 2017",
+    response: "True",
+    runtime: "141 min",
+    title: "Wonder Woman",
+    type: "movie",
+    website: "N/A",
+    writer:
+      "Allan Heinberg (screenplay by), Zack Snyder (story by), Allan Heinberg (story by), Jason Fuchs (story by), William Moulton Marston (Wonder Woman created by)",
+    imdbID: "tt0451279",
+    imdbRating: "7.4",
+    imdbVotes: "596,311",
+  },
+  {
+    actors: "Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary",
+    awards: "Won 3 Oscars. Another 13 wins & 20 nominations.",
+    boxOffice: "$260,758,300",
+    country: "USA",
+    releasedOnDVD: "22 Jul 2015",
+    director: "Steven Spielberg",
+    genre: "Adventure, Thriller",
+    language: "English",
+    metascore: "87",
+    plot: "When a killer shark unleashes chaos on a beach community, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BMmVmODY1MzEtYTMwZC00MzNhLWFkNDMtZjAwM2EwODUxZTA5XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+    production: "Universal Pictures, Zanuck/Brown Productions",
+    rated: "PG",
+    ratings: [
+      {
+        source: "Internet Movie Database",
+        value: "8.0/10",
+      },
+      {
+        source: "Rotten Tomatoes",
+        value: "98%",
+      },
+      {
+        source: "Metacritic",
+        value: "87/100",
+      },
+    ],
+    released: "20 Jun 1975",
+    response: "True",
+    runtime: "124 min",
+    title: "Jaws",
+    type: "movie",
+    website: "N/A",
+    writer:
+      "Peter Benchley (screenplay), Carl Gottlieb (screenplay), Peter Benchley (based on the novel by)",
+    imdbID: "tt0073195",
+    imdbRating: "8.0",
+    imdbVotes: "552,593",
+  },
+  {
+    actors: "Daniel Craig, Judi Dench, Javier Bardem, Ralph Fiennes",
+    awards: "Won 2 Oscars. Another 65 wins & 123 nominations.",
+    boxOffice: "$304,360,277",
+    country: "UK, USA, Turkey",
+    releasedOnDVD: "04 Feb 2017",
+    director: "Sam Mendes",
+    genre: "Action, Adventure, Thriller",
+    language: "English, Turkish, Shanghainese, Portuguese, Japanese",
+    metascore: "81",
+    plot: "James Bond's loyalty to M is tested when her past comes back to haunt her. When MI6 comes under attack, 007 must track down and destroy the threat, no matter how personal the cost.",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BMWZiNjE2OWItMTkwNy00ZWQzLWI0NTgtMWE0NjNiYTljN2Q1XkEyXkFqcGdeQXVyNzAwMjYxMzA@._V1_SX300.jpg",
+    production: "Eon Productions Ltd.",
+    rated: "PG-13",
+    ratings: [
+      {
+        source: "Internet Movie Database",
+        value: "7.7/10",
+      },
+      {
+        source: "Rotten Tomatoes",
+        value: "92%",
+      },
+      {
+        source: "Metacritic",
+        value: "81/100",
+      },
+    ],
+    released: "09 Nov 2012",
+    response: "True",
+    runtime: "143 min",
+    title: "Skyfall",
+    type: "movie",
+    website: "N/A",
+    writer: "Neal Purvis, Robert Wade, John Logan, Ian Fleming (characters)",
+    imdbID: "tt1074638",
+    imdbRating: "7.7",
+    imdbVotes: "640,174",
+  },
+];
+
+module.exports = movies;

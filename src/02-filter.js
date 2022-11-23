@@ -5,7 +5,6 @@
  const { nums, words } = require("../data/data");
  const examplePokemon = require("../data/poke");
  const exampleMovies = require("../data/movies");
-//const exampleSongData = require("./data/songs");
 
 /**
  * Returns an array of all songs by the artist "Saib".
@@ -26,9 +25,7 @@ const filterSongsOverThreeMinutes = (songs) => {};
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]} An array of objects.
  */
-const filterTitleTracks = (songs) => {
-    return songs.filter( song => song.title === song.album );
-};
+const filterTitleTracks = (songs) => {};
 
 /**
  * filterByGenre()
@@ -50,9 +47,7 @@ const filterTitleTracks = (songs) => {
 *  filterByGenre(movies, "Horror")
 *  //> []
 */
-const filterByGenre = (movies, genre) => {
-    return !movies.length ? [] : movies.filter( movie => movie.genre.toLowerCase().split(', ').includes( genre.toLowerCase() ) );
-};
+const filterByGenre = (movies, genre) => {};
 
 /**
  * getAllMoviesReleasedAtOrBeforeYear()
@@ -76,9 +71,7 @@ const filterByGenre = (movies, genre) => {
     }
     ];
 */
-const filterAllMoviesReleasedAtOrBeforeYear = (movies, year) => {
-    return !movies.length ? [] : movies.filter( movie => movie.released.split(' ').reverse()[0] <= year );
-};
+const filterAllMoviesReleasedAtOrBeforeYear = (movies, year) => {};
 
 module.exports = {
     filterSongsBySaib,
