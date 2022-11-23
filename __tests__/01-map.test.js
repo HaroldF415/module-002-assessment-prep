@@ -113,3 +113,25 @@ describe("mapArrayValuesSquaredTimesIndex()",() => {
   });
 });
 
+describe("mapArrayWordsUpperCased()", () => {
+
+  test("should use the `.map()` method", () => {
+    const hasMap = !!mapArrayWordsUpperCased.toString().match(/\.map(\s*\(|\()/g);
+    expect(hasMap).toBeTruthy();
+  });
+
+  test("A new array of words that are all uppercase", () => {
+    expect(/\.map/.test(mapArrayWordsUpperCased.toString())).toBe(true);
+    expect(mapArrayWordsUpperCased(words)).toStrictEqual([
+      "THE",
+      "QUICK",
+      "BROWN",
+      "FOX",
+      "JUMPS",
+      "OVER",
+      "THE",
+      "LAZY",
+      "DOG",
+    ]);
+  });
+});

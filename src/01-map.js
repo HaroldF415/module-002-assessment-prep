@@ -42,7 +42,6 @@ const mapSongDetails = (songs) => {};
 
 const mapTitleAndArtist = (songs) => {};
 
-
 /**
  * Returns an array of numbers, where each object is squared and then multiplied by their index.
  * @param {number[]} nums - An array of numbers.
@@ -52,17 +51,14 @@ const mapTitleAndArtist = (songs) => {};
  * Remember that the parameters for '.map()' include '.map( (element, index, array) {/__/});'
  * 
  */
-const mapArrayValuesSquaredTimesIndex = (nums) => {
-    return nums.map( (num, index) => (num*num) * index );
-};
-
+const mapArrayValuesSquaredTimesIndex = (nums) => {};
 
 /**
  * Returns an array of strings, where each string is uppercased.
  * @param {string[]} words - An array of strings.
  * @returns {string} An array of strings. 
  */
-const mapArrayWordsUpperCased = () => {};
+const mapArrayWordsUpperCased = (words) => {};
 
 module.exports = {
     mapSongTitles,
