@@ -12,18 +12,14 @@
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]} An array of objects.
  */
-const filterSongsBySaib = (songs) => {
-    return songs.flter( song => song.artist === 'Saib' );
-};
+const filterSongsBySaib = (songs) => {};
 
 /**
  * Returns an array of all songs where the runtime is over three minutes.
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object[]} An array of objects.
  */
-const filterSongsOverThreeMinutes = (songs) => {
-    return songs.filter( song => song.runtimeInSeconds > 180 );
-};
+const filterSongsOverThreeMinutes = (songs) => {};
 
 /**
  * Returns an array of songs where the song title is the same as the song album.
