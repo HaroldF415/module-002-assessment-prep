@@ -4,8 +4,8 @@
  const songData = require("../data/songs");
  const { nums, words } = require("../data/data");
  const examplePokemon = require("../data/poke");
- const exampleMovies = require("../data/movies");
-
+ const movies = require("../data/movies");
+ const moreMovies = require("../data/alternative-movies");
 /**
  * Returns an array of all songs by the artist "Saib".
  * @param {Object[]} songs - An array of songs. See the song data for more.
@@ -73,10 +73,15 @@ const filterByGenre = (movies, genre) => {};
 */
 const filterAllMoviesReleasedAtOrBeforeYear = (movies, year) => {};
 
+const filterByDirector = (movies, director) => {};
+
 module.exports = {
     filterSongsBySaib,
     filterSongsOverThreeMinutes,
     filterTitleTracks,
     filterByGenre,
     filterAllMoviesReleasedAtOrBeforeYear,
+    filterByDirector,
 };
+
+console.log( filterByDirector( movies, "Brad Bird" ) );
