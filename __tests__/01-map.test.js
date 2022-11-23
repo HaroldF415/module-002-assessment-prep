@@ -4,7 +4,8 @@ const {
     mapTitleAndArtist,
     mapArrayValuesSquaredTimesIndex,
     mapArrayWordsUpperCased,
-    mapCountByType, 
+    mapCountByType,
+    mapAverageTotalStatScore, 
 } = require("../src/01-map");
 
 const { nums, words } = require("../data/data.js");
@@ -139,7 +140,7 @@ describe("mapArrayWordsUpperCased()", () => {
   });
 });
 
-describe.only("mapCountByType()", () => {
+describe("mapCountByType()", () => {
 
   test("should use the `.map()` method", () => {
     const hasMap = !!mapCountByType.toString().match(/\.map(\s*\(|\()/g);
@@ -189,6 +190,33 @@ describe.only("mapCountByType()", () => {
       const actual = mapCountByType([]);
       const expected = {};
       expect(actual).toEqual(expected);
+  });
+
+});
+
+describe.only("mapAverageTotalStatScore()", () => {
+
+  test("should use the `.map()` method", () => {
+    const hasMap = !!mapAverageTotalStatScore.toString().match(/\.map(\s*\(|\()/g);
+    expect(hasMap).toBeTruthy();
+  });
+
+  test("should return the average attack stat score among all Pokemon as a number", () => {
+      const actual = mapAverageTotalStatScore(pokemon);
+      const expected = 407.22;
+      expect(actual).toBeCloseTo(expected, 2);
+  });
+
+  test("should dynamically change depending on the Pokemon inputted", () => {
+      const actual = mapAverageTotalStatScore(shuffledPokemon);
+      const expected = 327.45;
+      expect(actual).toBeCloseTo(expected, 2);
+  });
+
+  test("should return `0` if there are no Pokemon", () => {
+      const actual = mapAverageTotalStatScore([]);
+      const expected = 0;
+      expect(actual).toBeCloseTo(expected, 2);
   });
 
 });

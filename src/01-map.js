@@ -92,6 +92,20 @@ const mapArrayWordsUpperCased = (words) => {};
  */
 const mapCountByType = (pokemon) => {};
 
+/**
+ * getAverageTotalStatScore()
+ * -----------------------------
+ * Averages all of the `total` stat scores from all Pokemon and returns it, as a number. 
+ * If the inputted `pokemon` array is empty, return `0`.
+ * @param {Object[]} pokemon - An array of Pokemon. See the `poke.js` file for an example of this array.
+ * @returns {number} The average `total` stat across all Pokemon.
+ *
+ * EXAMPLE:
+ *  getAverageTotalStatScore(pokemon);
+ *  //> 407.22
+ */
+const mapAverageTotalStatScore = (pokemon) => {};
+
 module.exports = {
     mapSongTitles,
     mapSongDetails,
@@ -99,4 +113,5 @@ module.exports = {
     mapArrayValuesSquaredTimesIndex,
     mapArrayWordsUpperCased,
     mapCountByType,
+    mapAverageTotalStatScore,
 };
