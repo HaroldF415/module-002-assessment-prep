@@ -27,6 +27,8 @@ const filterSongsOverThreeMinutes = (songs) => {};
  */
 const filterTitleTracks = (songs) => {};
 
+const filterNumsLessThan5 = (nums) => {};
+
 /**
  * filterByGenre()
  * -----------------------------
@@ -79,6 +81,7 @@ module.exports = {
     filterSongsBySaib,
     filterSongsOverThreeMinutes,
     filterTitleTracks,
+    filterNumsLessThan5,
     filterByGenre,
     filterAllMoviesReleasedAtOrBeforeYear,
     filterByDirector,
