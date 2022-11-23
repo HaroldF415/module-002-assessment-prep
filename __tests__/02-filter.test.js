@@ -5,6 +5,7 @@ const {
     filterByGenre,
     filterAllMoviesReleasedAtOrBeforeYear,
     filterByDirector,
+    filterNumsLessThan5,
 } = require("../src/02-filter");
 
 const { nums, words } = require("../data/data.js");
@@ -157,6 +158,39 @@ describe("filterTitleTracks()", () => {
 
 });
 
+describe.only("filterNumsLessThan5()", () => {
+
+    test("should use the `.filter()` method", () => {
+        const hasFilter = !!filterNumsLessThan5.toString().match(/\.filter(\s*\(|\()/g);
+        expect(hasFilter).toBeTruthy();
+      });
+
+    test("A new array with all values less than 5", () => {
+    filterNumsLessThan5;
+    expect(/\.filter/.test(filterNumsLessThan5.toString())).toBe(true);
+    expect(filterNumsLessThan5(nums)).toStrictEqual([1, 2, 3, 4, 0]);
+    });
+
+    test("should return an empty array if no movies match the genre", () => {
+        const actual = filterNumsLessThan5([]);
+        const expected = [];
+        expect(actual).toEqual(expected);
+    });
+
+    test("should return an empty array if there no numbers less than 5", () => {
+        const actual = filterNumsLessThan5([10, 29, 44, 39, 459, 228]);
+        const expected = [];
+        expect(actual).toEqual(expected);
+    });
+
+    test("BONUS ROUND: can you do it in less than 70 characters?", () => {
+        const characterMatch = filterNumsLessThan5.toString().length;
+        const expected = 69;
+        expect(characterMatch).toEqual(expected)
+      });
+
+});
+
 describe("filterByGenre()", () => {
 
     test("should use the `.filter()` method", () => {
@@ -185,6 +219,7 @@ describe("filterByGenre()", () => {
       ];
       expect(actual).toEqual(expected);
     });
+
     test("should dynamically change depending on the movies inputted", () => {
       const genre = "Action";
       const actual = filterByGenre(alternative, genre);
@@ -195,6 +230,7 @@ describe("filterByGenre()", () => {
       ];
       expect(actual).toEqual(expected);
     });
+
     test("should be case-insensitive", () => {
       const genre = "FANTASY";
       const actual = filterByGenre(movies, genre);
@@ -208,12 +244,14 @@ describe("filterByGenre()", () => {
       ];
       expect(actual).toEqual(expected);
     });
+
     test("should return an empty array if no movies match the genre", () => {
       const genre = "Horror";
       const actual = filterByGenre(movies, genre);
       const expected = [];
       expect(actual).toEqual(expected);
     });
+
     test("should return an empty array if there are no movies", () => {
       const genre = "Action";
       const actual = filterByGenre([], genre);
