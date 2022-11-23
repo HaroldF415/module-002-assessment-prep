@@ -1,7 +1,8 @@
 /**
  * DON'T TOUCH THE LINE BELOW!!!
  */
-const songData = require("../data/testingData");
+const songData = require("../data/song");
+const { nums, words } = require("../data/data");
 
 /**
  * Returns an array of all of the song titles.
@@ -11,7 +12,7 @@ const songData = require("../data/testingData");
  * MUST USE '.map()'
  */
 
-const mapSongTitles = () => {};
+const mapSongTitles = ( songs ) => {};
 
 /**
  * Returns an array of all of the song titles with the artist.
@@ -25,7 +26,7 @@ const mapSongTitles = () => {};
  *  MUST USE '.map()'
  */
 
-const mapSongDetails = () => {};
+const mapSongDetails = (songs) => {};
 
 /**
  * Returns an array of objects, where each object has a key that is the song title and has a value that is the song artist.
@@ -39,7 +40,7 @@ const mapSongDetails = () => {};
  * MUST USE '.map()'
  */
 
-const maptitleAndArtist = () => {};
+const mapTitleAndArtist = (songs) => {};
 
 
 /**
@@ -51,7 +52,9 @@ const maptitleAndArtist = () => {};
  * Remember that the parameters for '.map()' include '.map( (element, index, array) {/__/});'
  * 
  */
-const mapArrayValuesSquaredTimesIndex = () => {};
+const mapArrayValuesSquaredTimesIndex = (nums) => {
+    return nums.map( (num, index) => (num*num) * index );
+};
 
 
 /**

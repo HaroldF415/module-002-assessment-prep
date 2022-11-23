@@ -6,11 +6,13 @@ const {
     mapArrayWordsUpperCased, 
 } = require("../src/01-map");
 
+const { nums, words } = require("../data/data.js");
+
 describe("mapSongTitles()", () => {
     let songs;
     beforeEach(() => {
       jest.resetModules();
-      songs = require("../data/testingData");
+      songs = require("../data/song");
     });
   
     test("should use the `.map()` method", () => {
@@ -34,13 +36,13 @@ describe("mapSongTitles()", () => {
       ];
       expect(actual).toEqual(expected);
     });
-  });
+});
 
 describe("mapSongDetails()", () => {
   let songs;
   beforeEach(() => {
     jest.resetModules();
-    songs = require("../data/testingData");
+    songs = require("../data/song");
   });
 
   test("should use the `.map()` method", () => {
@@ -70,7 +72,7 @@ describe("mapTitleAndArtist()", () => {
   let songs;
   beforeEach(() => {
     jest.resetModules();
-    songs = require("../data/testingData");
+    songs = require("../data/song");
   });
 
   test("should use the `.map()` method", () => {
@@ -95,3 +97,19 @@ describe("mapTitleAndArtist()", () => {
     expect(actual).toEqual(expected);
   });
 });
+
+describe("mapArrayValuesSquaredTimesIndex()",() => {
+
+  test("should use the `.map()` method", () => {
+    const hasMap = !!mapArrayValuesSquaredTimesIndex.toString().match(/\.map(\s*\(|\()/g);
+    expect(hasMap).toBeTruthy();
+  });
+
+  test("A new array of values that are squared and then multiplied by their index number", () => {
+    expect(/\.map/.test(mapArrayValuesSquaredTimesIndex.toString())).toBe(true);
+    expect(mapArrayValuesSquaredTimesIndex(nums)).toStrictEqual([
+      0, 4, 18, 48, 100, 180, 294, 448, 648, 900, 0,
+    ]);
+  });
+});
+
