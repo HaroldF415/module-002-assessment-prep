@@ -44,4 +44,4 @@ and so on...
 WARNING!
 I HAVE ONLY MANAGED TO GET UP TO 03-forEach.js
 THE REST OF THE FILES WILL HAVE TO WAIT AFTER I FINISH WORKING!
-FORK AND CLONE THIS REPO work on it as you like. I'll prolly finish by Friday night. If you wanna see me finish this up. Join me on Discord. I stream there nightly. Alone. </3
+FORK AND CLONE THIS REPO work on it as you like. I'll prolly finish by Friday night. If you wanna see me finish this up. Join me on Discord. I stream there nightly....sometimes.....maybe?
