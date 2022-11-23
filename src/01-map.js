@@ -1,7 +1,7 @@
 /**
  * DON'T TOUCH THE LINE BELOW!!!
  */
-const songData = require("../data/songs");
+const songData = require("../data/testingData");
 
 /**
  * Returns an array of all of the song titles.
