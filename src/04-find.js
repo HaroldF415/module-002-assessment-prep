@@ -37,7 +37,7 @@
  *
  * EXAMPLE:
  *  findTheShortestDinosaur(dinosaurs);
- *  OUTPUT -> // { Brachiosaurus: 98.43 }
+ *  OUTPUT -> // { Compsognathus: 2.13 }
  */
  const findTheShortestDinosaur = (dinosaurs) => {};
 

@@ -22,7 +22,7 @@ console.log(`
 |__|~')________________('
 `)
 
-describe.only("findTheLongestDinosaur()\n", () => {
+describe("findTheLongestDinosaur()\n", () => {
 
     test("should use the `.find()` method", () => {
         const hasFind = !!findTheLongestDinosaur.toString().match(/\.find(\s*\(|\()/g);
@@ -84,14 +84,81 @@ describe.only("findTheLongestDinosaur()\n", () => {
         expect(hasMathMax).toBeTruthy();
     });
 
-    test("BONUS ROUND #2: should include using the `.reduce()` to findTheLongestDinosaur()", () => {
+    test("BONUS ROUND #2: should include using the `.reduce()` to findTheLongestDinosaur()\n", () => {
         const hasReduce = !!findTheLongestDinosaur.toString().match(/\.reduce(\s*\(|\()/g);
         expect(hasReduce).toBeTruthy();   
     });
 
 });
 
-describe("findTheShortestDinosaur()\n", () => {});
+describe("findTheShortestDinosaur()\n", () => {
+
+    test("should use the `.find()` method", () => {
+        const hasFind = !!findTheShortestDinosaur.toString().match(/\.find(\s*\(|\()/g);
+        expect(hasFind).toBeTruthy();
+    });
+
+    test("should return an object where the key is the tallest dinosaur name and the value is the length in feet", () => {
+        
+        const actual = findTheShortestDinosaur(dinosaurs);
+
+        const keys = Object.keys(actual);
+        expect(keys.length).toEqual(1);
+
+        const name = keys[0];
+        expect(name).toEqual("Compsognathus");
+        expect(actual[name]).toBeCloseTo(2.135, 1);
+
+    });
+
+    test("should return the first dinosaur if there are multiples with the same length", () => {
+
+        const input = [
+            ...dinosaurs,
+            {
+            dinosaurId: "7ZJlPQZRL",
+            name: "Impasaurus",
+            pronunciation: "IMP-AHH-SORE-us",
+            meaningOfName: "Very short dinosaur",
+            diet: "carnivore",
+            lengthInMeters: 0.65,
+            period: "Early Age",
+            mya: [120, 110],
+            info: "Not much is known about this dinosaur but it might have lived in Westeros/Kings Landing.",
+            },
+        ];
+        
+        const actual = findTheShortestDinosaur(input);
+
+        const keys = Object.keys(actual);
+        expect(keys.length).toEqual(1);
+
+        const name = keys[0];
+        expect(name).toEqual("Compsognathus");
+        expect(actual[name]).toBeCloseTo(2.135, 1);
+
+    });
+
+    test("should return an empty object if there are no dinosaurs\n", () => {
+
+        const actual = findTheShortestDinosaur([]);
+        const expected = {};
+    
+        expect(actual).toEqual(expected);
+
+    });
+
+    test("BONUS ROUND #1: should include using the `Math.min()` to findTheShortestDinosaur()", () => {
+        const hasMathMin = !!findTheShortestDinosaur.toString().match(/\Math.min(\s*\(|\()/g);
+        expect(hasMathMin).toBeTruthy();
+    });
+
+    test("BONUS ROUND #2: should include using the `.reduce()` to findTheShortestDinosaur()", () => {
+        const hasReduce = !!findTheShortestDinosaur.toString().match(/\.reduce(\s*\(|\()/g);
+        expect(hasReduce).toBeTruthy();   
+    });
+
+});
 
 describe("findDinosaurByName()", () => {});
 
