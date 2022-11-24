@@ -93,4 +93,5 @@ module.exports = {
     filterByGenre,
     filterAllMoviesReleasedAtOrBeforeYear,
     filterByDirector,
+    filterCharactersBySpecies,
 };
