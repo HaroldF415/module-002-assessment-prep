@@ -39,4 +39,4 @@ npm test 02-filter.test.js
 ```
 and so on...
 
-Solve the functions however you want, but use the functions that are needed in each function.
+Solve the functions however you want, but use the functions that are needed in each test.
