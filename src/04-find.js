@@ -58,7 +58,7 @@
  /**
  * findThePokemonWithTheHighestAttackScore()
  * ---------------------
- * Returns an object with that matches the dinosaur with the highest 'attack' score
+ * Returns an object with that matches the pokemon with the highest 'attack' score
  *
  * @param {Object[]} pokemon - An array of 'pokemon' objects. See the `data/poke.js` file for an example of the input.
  * @returns {Object} An object where the key is the name of the pokemon and the value is the highest 'attack' score.

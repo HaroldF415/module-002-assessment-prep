@@ -160,9 +160,79 @@ describe("findTheShortestDinosaur()\n", () => {
 
 });
 
-describe("findDinosaurByName()", () => {});
+describe("findDinosaurByName()\n", () => {});
 
-describe("findThePokemonWithTheHighestAttackScore()", () => {});
+describe("findThePokemonWithTheHighestAttackScore()\n", () => {
+
+    test("should use the `.find()` method", () => {
+        const hasFind = !!findThePokemonWithTheHighestAttackScore.toString().match(/\.find(\s*\(|\()/g);
+        expect(hasFind).toBeTruthy();
+    });
+
+    test("should return an object where the key is the Pokemon's name and the value is the AttackScore", () => {
+        
+        const actual = findThePokemonWithTheHighestAttackScore(pokemon);
+
+        const keys = Object.keys(actual);
+        expect(keys.length).toEqual(1);
+
+        const name = keys[0];
+        expect(name).toEqual("Dragonite");
+        expect(actual[name]).toBeCloseTo(134, 1);
+
+    });
+
+    test("should return the first Pokemon if there are multiples with the same AttackScore", () => {
+
+        const input = [
+            ...pokemon,
+            {
+                national_number: '666',
+                evolution: 'Metal Greymon',
+                name: 'Greymon',
+                type: ['Dinosaur', 'Fire'],
+                stats: [
+                    { category: 'total', value: 300 },
+                    { category: 'hp', value: 22 },
+                    { category: 'attack', value: 134 },
+                    { category: 'defense', value: 100 },
+                    { category: 'special attack', value: 30 },
+                    { category: 'special defense', value: 30 },
+                    { category: 'speed', value: 20 }
+                ]
+            },
+        ];
+        
+        const actual = findThePokemonWithTheHighestAttackScore(input);
+
+        const keys = Object.keys(actual);
+        expect(keys.length).toEqual(1);
+
+        const name = keys[0];
+        expect(name).toEqual("Dragonite");
+        expect(actual[name]).toBeCloseTo(134, 1);
+
+    });
+
+    test("should return an empty object if there are no pokemon\n", () => {
+
+        const actual = findThePokemonWithTheHighestAttackScore([]);
+        const expected = {};
+    
+        expect(actual).toEqual(expected);
+
+    });
+
+    test("BONUS ROUND #1: should include using the `Math.min()` to findThePokemonWithTheHighestAttackScore()", () => {
+        const hasMathMax = !!findThePokemonWithTheHighestAttackScore.toString().match(/\Math.max(\s*\(|\()/g);
+        expect(hasMathMax).toBeTruthy();
+    });
+
+    test("BONUS ROUND #2: should include using the `.reduce()` to findThePokemonWithTheHighestAttackScore()", () => {
+        const hasReduce = !!findThePokemonWithTheHighestAttackScore.toString().match(/\.reduce(\s*\(|\()/g);
+        expect(hasReduce).toBeTruthy();   
+    });
+});
 
 describe("findThePokemonWithTheLowestAttackScore()", () => {});
 

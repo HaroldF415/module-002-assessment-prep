@@ -276,5 +276,4 @@ describe("mapHighestAttackScore", () => {
     const expected = 136;
     expect(characterMatch).toBeCloseTo(expected, 140)
   });
-
 });
