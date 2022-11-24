@@ -20,7 +20,7 @@ console.log(`
 |--| || Let's .map()! ||
 |  | |'---------------'|
 |__|~')_______________('
-`)
+`);
 
 describe("mapSongTitles()", () => {
     let songs;
