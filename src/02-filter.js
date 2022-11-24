@@ -6,6 +6,9 @@
  const examplePokemon = require("../data/poke");
  const movies = require("../data/movies");
  const moreMovies = require("../data/alternative-movies");
+
+ // The lines above connect the data stored in the 'data' folder to this file.  
+
 /**
  * Returns an array of all songs by the artist "Saib".
  * @param {Object[]} songs - An array of songs. See the song data for more.
