@@ -106,7 +106,7 @@
  * @returns {Object} An object where the key is the name of the pokemon and the value is its first type.
  *
  * EXAMPLE:
- *  findThePokemonWithTheLowestAttackScore(pokemon, name);
+ *  findThePokemonByName(pokemon, name);
  *  OUTPUT -> // { pokemonName: pokeObj.type[0] }
  */
  const findPokemonByName = (pokemon, name) => {};
@@ -114,7 +114,7 @@
  /**
  * findThePokemonByEvolution()
  * ---------------------
- * Returns an object with that matches the pokemon with its 'name'
+ * Returns an object with that matches the pokemon with its 'evolution'
  *
  * @param {Object[]} pokemon - An array of 'pokemon' objects. See the `data/poke.js` file for an example of the input.
  * @returns {Object} An object where the key is the name of the pokemon and the value is its the next evolution.
