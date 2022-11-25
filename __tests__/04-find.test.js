@@ -389,20 +389,6 @@ describe.only("findPokemonByName()", () => {
 
     });
 
-    test("BONUS ROUND #1: should make use the `.toUpperCase()` method", () => {
-        const hasToUpperCase = !!findPokemonByName.toString().match(/\.toUpperCase(\s*\(|\()/g);
-        expect(hasToUpperCase).toBeTruthy();
-    });
-
-    test("BONUS ROUND #2: should include using the `.map()` method", () => {
-        const hasMap = !!findPokemonByName.toString().match(/\.map(\s*\(|\()/g);
-        expect(hasMap).toBeTruthy();   
-    });
-
-    test("BONUS ROUND #3: should include using the `.split()` method", () => {
-        const hasSplit = !!findPokemonByName.toString().match(/\.split(\s*\(|\()/g);
-        expect(hasSplit).toBeTruthy();   
-    });
 });
 
 describe("findPokemonByEvolution()", () => {});
