@@ -204,7 +204,7 @@ describe("findDinosaurByName()", () => {
         expect(hasMap).toBeTruthy();   
     });
 
-    test("BONUS ROUND #3: should include using the `.split()` method", () => {
+    test("BONUS ROUND #3: should include using the `.split()` method\n", () => {
         const hasSplit = !!findDinosaurByName.toString().match(/\.split(\s*\(|\()/g);
         expect(hasSplit).toBeTruthy();   
     });
@@ -277,7 +277,7 @@ describe("findThePokemonWithTheHighestAttackScore()", () => {
         expect(hasMathMax).toBeTruthy();
     });
 
-    test("BONUS ROUND #2: should include using the `.reduce()` method", () => {
+    test("BONUS ROUND #2: should include using the `.reduce()` method\n", () => {
         const hasReduce = !!findThePokemonWithTheHighestAttackScore.toString().match(/\.reduce(\s*\(|\()/g);
         expect(hasReduce).toBeTruthy();   
     });
@@ -347,15 +347,48 @@ describe("findThePokemonWithTheLowestAttackScore()", () => {
         expect(hasMathMin).toBeTruthy();
     });
 
-    test("BONUS ROUND #2: should include using the `.reduce()` method", () => {
+    test("BONUS ROUND #2: should include using the `.reduce()` method\n", () => {
         const hasReduce = !!findThePokemonWithTheLowestAttackScore.toString().match(/\.reduce(\s*\(|\()/g);
         expect(hasReduce).toBeTruthy();   
     });    
 });
 
-describe("findfindPokemonByNationalNumber()", () => {});
+describe("findfindPokemonByNationalNumber()", () => {
 
-describe.only("findPokemonByName()", () => {
+    test("should use the `.find()` method", () => {
+        const hasFind = !!findPokemonByNationalNumber.toString().match(/\.find(\s*\(|\()/g);
+        expect(hasFind).toBeTruthy();
+    });
+
+    test("should return an empty object if there are no pokemon", () => {
+        const actual = findPokemonByNationalNumber([], "Togemon");
+        const expected = {};
+
+        expect(actual).toEqual(expected);
+    });
+
+    test("should return an empty object if the nationalNumber of the pokemon does not match any of the pokemon provided", () => {
+        const actual = findPokemonByNationalNumber(pokemon, "666");
+        const expected = {};
+
+        expect(actual).toEqual(expected);
+    });
+
+    test("should return the first pokemon that matches the NationalNumber provided\n", () => {
+        let natNumber = "123";
+        const actual = findPokemonByNationalNumber(pokemon, natNumber);
+
+        const keys = Object.keys(actual);
+        expect(keys.length).toEqual(1);
+
+        const name = keys[0];
+        expect(name).toEqual("Scyther");
+        expect(actual[name]).toEqual("123");
+
+    });
+});
+
+describe("findPokemonByName()", () => {
 
     test("should use the `.find()` method", () => {
         const hasFind = !!findPokemonByName.toString().match(/\.find(\s*\(|\()/g);
