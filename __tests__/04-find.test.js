@@ -304,8 +304,8 @@ describe.only("findThePokemonWithTheLowestAttackScore()", () => {
         expect(keys.length).toEqual(1);
 
         const name = keys[0];
-        expect(name).toEqual("Dragonite");
-        expect(actual[name]).toBeCloseTo(134, 1);
+        expect(name).toEqual("Chansey");
+        expect(actual[name]).toBeCloseTo(5, 1);
 
     });
 
@@ -314,18 +314,15 @@ describe.only("findThePokemonWithTheLowestAttackScore()", () => {
         const input = [
             ...pokemon,
             {
-                national_number: '666',
-                evolution: 'Metal Greymon',
-                name: 'Greymon',
-                type: ['Dinosaur', 'Fire'],
+                national_number: '210',
+                evolution: 'Lilamon',
+                name: 'Sunflowmon',
+                type: ['Plant', 'Grass'],
                 stats: [
                     { category: 'total', value: 300 },
                     { category: 'hp', value: 22 },
-                    { category: 'attack', value: 134 },
-                    { category: 'defense', value: 100 },
-                    { category: 'special attack', value: 30 },
-                    { category: 'special defense', value: 30 },
-                    { category: 'speed', value: 20 }
+                    { category: 'attack', value: 5 },
+ 
                 ]
             },
         ];
@@ -336,8 +333,8 @@ describe.only("findThePokemonWithTheLowestAttackScore()", () => {
         expect(keys.length).toEqual(1);
 
         const name = keys[0];
-        expect(name).toEqual("Dragonite");
-        expect(actual[name]).toBeCloseTo(134, 1);
+        expect(name).toEqual("Chansey");
+        expect(actual[name]).toBeCloseTo(5, 1);
 
     });
 
@@ -351,8 +348,8 @@ describe.only("findThePokemonWithTheLowestAttackScore()", () => {
     });
 
     test("BONUS ROUND #1: should include using the `Math.min()` method", () => {
-        const hasMathMax = !!findThePokemonWithTheLowestAttackScore.toString().match(/\Math.max(\s*\(|\()/g);
-        expect(hasMathMax).toBeTruthy();
+        const hasMathMin = !!findThePokemonWithTheLowestAttackScore.toString().match(/\Math.min(\s*\(|\()/g);
+        expect(hasMathMin).toBeTruthy();
     });
 
     test("BONUS ROUND #2: should include using the `.reduce()` method", () => {
