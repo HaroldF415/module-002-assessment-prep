@@ -22,7 +22,7 @@ console.log(`
 |__|~')________________('
 `)
 
-describe("findTheLongestDinosaur()\n", () => {
+describe("findTheLongestDinosaur()", () => {
 
     test("should use the `.find()` method", () => {
         const hasFind = !!findTheLongestDinosaur.toString().match(/\.find(\s*\(|\()/g);
@@ -91,7 +91,7 @@ describe("findTheLongestDinosaur()\n", () => {
 
 });
 
-describe("findTheShortestDinosaur()\n", () => {
+describe("findTheShortestDinosaur()", () => {
 
     test("should use the `.find()` method", () => {
         const hasFind = !!findTheShortestDinosaur.toString().match(/\.find(\s*\(|\()/g);
@@ -160,7 +160,7 @@ describe("findTheShortestDinosaur()\n", () => {
 
 });
 
-describe("findDinosaurByName()\n", () => {
+describe("findDinosaurByName()", () => {
 
     test("should use the `.find()` method", () => {
         const hasFind = !!findDinosaurByName.toString().match(/\.find(\s*\(|\()/g);
@@ -194,11 +194,6 @@ describe("findDinosaurByName()\n", () => {
 
     });
 
-    test("should make use of the '.toUpperCase()' method\n", () => {
-        const hastoUpperCase = !!findDinosaurByName.toString().match(/\.toUpperCase(\s*\(|\()/g);
-        expect(hastoUpperCase).toBeTruthy()
-    });
-
     test("BONUS ROUND #1: should make use the `.toUpperCase()` method", () => {
         const hasToUpperCase = !!findDinosaurByName.toString().match(/\.toUpperCase(\s*\(|\()/g);
         expect(hasToUpperCase).toBeTruthy();
@@ -209,14 +204,14 @@ describe("findDinosaurByName()\n", () => {
         expect(hasMap).toBeTruthy();   
     });
 
-    test("BONUS ROUND #2: should include using the `.split()` method", () => {
+    test("BONUS ROUND #3: should include using the `.split()` method", () => {
         const hasSplit = !!findDinosaurByName.toString().match(/\.split(\s*\(|\()/g);
         expect(hasSplit).toBeTruthy();   
     });
 
 });
 
-describe("findThePokemonWithTheHighestAttackScore()\n", () => {
+describe("findThePokemonWithTheHighestAttackScore()", () => {
 
     test("should use the `.find()` method", () => {
         const hasFind = !!findThePokemonWithTheHighestAttackScore.toString().match(/\.find(\s*\(|\()/g);
@@ -289,7 +284,7 @@ describe("findThePokemonWithTheHighestAttackScore()\n", () => {
 
 });
 
-describe.only("findThePokemonWithTheLowestAttackScore()", () => {
+describe("findThePokemonWithTheLowestAttackScore()", () => {
 
     test("should use the `.find()` method", () => {
         const hasFind = !!findThePokemonWithTheLowestAttackScore.toString().match(/\.find(\s*\(|\()/g);
@@ -360,6 +355,54 @@ describe.only("findThePokemonWithTheLowestAttackScore()", () => {
 
 describe("findfindPokemonByNationalNumber()", () => {});
 
-describe("findPokemonByName()", () => {});
+describe.only("findPokemonByName()", () => {
+
+    test("should use the `.find()` method", () => {
+        const hasFind = !!findPokemonByName.toString().match(/\.find(\s*\(|\()/g);
+        expect(hasFind).toBeTruthy();
+    });
+
+    test("should return an empty object if there are no pokemon", () => {
+        const actual = findPokemonByName([], "Drillmon");
+        const expected = {};
+
+        expect(actual).toEqual(expected);
+    });
+
+    test("should return an empty object if the name of the pokemon does not match any of the pokemon provided", () => {
+        const actual = findPokemonByName(pokemon, "Devilmon");
+        const expected = {};
+
+        expect(actual).toEqual(expected);
+    });
+
+    test("should return the first pokemon that matches the name provided\n", () => {
+        let pokeName = "Pikachu";
+        const actual = findPokemonByName(pokemon, pokeName);
+
+        const keys = Object.keys(actual);
+        expect(keys.length).toEqual(1);
+
+        const name = keys[0];
+        expect(name).toEqual("Pikachu");
+        expect(actual[name]).toEqual("Electric");
+
+    });
+
+    test("BONUS ROUND #1: should make use the `.toUpperCase()` method", () => {
+        const hasToUpperCase = !!findPokemonByName.toString().match(/\.toUpperCase(\s*\(|\()/g);
+        expect(hasToUpperCase).toBeTruthy();
+    });
+
+    test("BONUS ROUND #2: should include using the `.map()` method", () => {
+        const hasMap = !!findPokemonByName.toString().match(/\.map(\s*\(|\()/g);
+        expect(hasMap).toBeTruthy();   
+    });
+
+    test("BONUS ROUND #3: should include using the `.split()` method", () => {
+        const hasSplit = !!findPokemonByName.toString().match(/\.split(\s*\(|\()/g);
+        expect(hasSplit).toBeTruthy();   
+    });
+});
 
 describe("findPokemonByEvolution()", () => {});
