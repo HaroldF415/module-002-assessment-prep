@@ -79,12 +79,12 @@ describe("findTheLongestDinosaur()\n", () => {
 
     });
 
-    test("BONUS ROUND #1: should include using the `Math.max()` to findTheLongestDinosaur()", () => {
+    test("BONUS ROUND #1: should include using the `Math.max()`", () => {
         const hasMathMax = !!findTheLongestDinosaur.toString().match(/\Math.max(\s*\(|\()/g);
         expect(hasMathMax).toBeTruthy();
     });
 
-    test("BONUS ROUND #2: should include using the `.reduce()` to findTheLongestDinosaur()\n", () => {
+    test("BONUS ROUND #2: should include using the `.reduce()`\n", () => {
         const hasReduce = !!findTheLongestDinosaur.toString().match(/\.reduce(\s*\(|\()/g);
         expect(hasReduce).toBeTruthy();   
     });
@@ -277,7 +277,7 @@ describe("findThePokemonWithTheHighestAttackScore()\n", () => {
 
     });
 
-    test("BONUS ROUND #1: should include using the `Math.min()` method", () => {
+    test("BONUS ROUND #1: should include using the `Math.max()` method", () => {
         const hasMathMax = !!findThePokemonWithTheHighestAttackScore.toString().match(/\Math.max(\s*\(|\()/g);
         expect(hasMathMax).toBeTruthy();
     });
@@ -289,7 +289,77 @@ describe("findThePokemonWithTheHighestAttackScore()\n", () => {
 
 });
 
-describe("findThePokemonWithTheLowestAttackScore()", () => {});
+describe.only("findThePokemonWithTheLowestAttackScore()", () => {
+
+    test("should use the `.find()` method", () => {
+        const hasFind = !!findThePokemonWithTheLowestAttackScore.toString().match(/\.find(\s*\(|\()/g);
+        expect(hasFind).toBeTruthy();
+    });
+
+    test("should return an object where the key is the Pokemon's name and the value is the AttackScore", () => {
+        
+        const actual = findThePokemonWithTheLowestAttackScore(pokemon);
+
+        const keys = Object.keys(actual);
+        expect(keys.length).toEqual(1);
+
+        const name = keys[0];
+        expect(name).toEqual("Dragonite");
+        expect(actual[name]).toBeCloseTo(134, 1);
+
+    });
+
+    test("should return the first Pokemon if there are multiples with the same AttackScore", () => {
+
+        const input = [
+            ...pokemon,
+            {
+                national_number: '666',
+                evolution: 'Metal Greymon',
+                name: 'Greymon',
+                type: ['Dinosaur', 'Fire'],
+                stats: [
+                    { category: 'total', value: 300 },
+                    { category: 'hp', value: 22 },
+                    { category: 'attack', value: 134 },
+                    { category: 'defense', value: 100 },
+                    { category: 'special attack', value: 30 },
+                    { category: 'special defense', value: 30 },
+                    { category: 'speed', value: 20 }
+                ]
+            },
+        ];
+        
+        const actual = findThePokemonWithTheLowestAttackScore(input);
+
+        const keys = Object.keys(actual);
+        expect(keys.length).toEqual(1);
+
+        const name = keys[0];
+        expect(name).toEqual("Dragonite");
+        expect(actual[name]).toBeCloseTo(134, 1);
+
+    });
+
+    test("should return an empty object if there are no pokemon\n", () => {
+
+        const actual = findThePokemonWithTheLowestAttackScore([]);
+        const expected = {};
+    
+        expect(actual).toEqual(expected);
+
+    });
+
+    test("BONUS ROUND #1: should include using the `Math.min()` method", () => {
+        const hasMathMax = !!findThePokemonWithTheLowestAttackScore.toString().match(/\Math.max(\s*\(|\()/g);
+        expect(hasMathMax).toBeTruthy();
+    });
+
+    test("BONUS ROUND #2: should include using the `.reduce()` method", () => {
+        const hasReduce = !!findThePokemonWithTheLowestAttackScore.toString().match(/\.reduce(\s*\(|\()/g);
+        expect(hasReduce).toBeTruthy();   
+    });    
+});
 
 describe("findfindPokemonByNationalNumber()", () => {});
 
