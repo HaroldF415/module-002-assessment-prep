@@ -153,14 +153,68 @@ describe("findTheShortestDinosaur()\n", () => {
         expect(hasMathMin).toBeTruthy();
     });
 
-    test("BONUS ROUND #2: should include using the `.reduce()` to findTheShortestDinosaur()", () => {
+    test("BONUS ROUND #2: should include using the `.reduce()` to findTheShortestDinosaur()\n", () => {
         const hasReduce = !!findTheShortestDinosaur.toString().match(/\.reduce(\s*\(|\()/g);
         expect(hasReduce).toBeTruthy();   
     });
 
 });
 
-describe("findDinosaurByName()\n", () => {});
+describe("findDinosaurByName()\n", () => {
+
+    test("should use the `.find()` method", () => {
+        const hasFind = !!findDinosaurByName.toString().match(/\.find(\s*\(|\()/g);
+        expect(hasFind).toBeTruthy();
+    });
+
+    test("should return an empty object if there are no dinosaurs", () => {
+        const actual = findDinosaurByName([], "Galapasaurus");
+        const expected = {};
+
+        expect(actual).toEqual(expected);
+    });
+
+    test("should return an empty object if the name of the dinosaur does not match any of the dinosaurs provided", () => {
+        const actual = findDinosaurByName(dinosaurs, "Galapasaurus");
+        const expected = {};
+
+        expect(actual).toEqual(expected);
+    });
+
+    test("should return the first dinosaur that matches the name provided", () => {
+        let dinoName = "Giraffatitan";
+        const actual = findDinosaurByName(dinosaurs, dinoName);
+
+        const keys = Object.keys(actual);
+        expect(keys.length).toEqual(1);
+
+        const name = keys[0];
+        expect(name).toEqual("Giraffatitan");
+        expect(actual[name]).toEqual("Giraffe Titan!");
+
+    });
+
+    test("should make use of the '.toUpperCase()' method\n", () => {
+        const hastoUpperCase = !!findDinosaurByName.toString().match(/\.toUpperCase(\s*\(|\()/g);
+        expect(hastoUpperCase).toBeTruthy()
+    });
+
+    test("BONUS ROUND #1: should make use the `.toUpperCase()` method", () => {
+        const hasToUpperCase = !!findDinosaurByName.toString().match(/\.toUpperCase(\s*\(|\()/g);
+        expect(hasToUpperCase).toBeTruthy();
+    });
+
+    test("BONUS ROUND #2: should include using the `.map()` method", () => {
+        const hasMap = !!findDinosaurByName.toString().match(/\.map(\s*\(|\()/g);
+        expect(hasMap).toBeTruthy();   
+    });
+
+    test("BONUS ROUND #2: should include using the `.split()` method", () => {
+        const hasSplit = !!findDinosaurByName.toString().match(/\.split(\s*\(|\()/g);
+        expect(hasSplit).toBeTruthy();   
+    });
+
+});
 
 describe("findThePokemonWithTheHighestAttackScore()\n", () => {
 
@@ -223,15 +277,16 @@ describe("findThePokemonWithTheHighestAttackScore()\n", () => {
 
     });
 
-    test("BONUS ROUND #1: should include using the `Math.min()` to findThePokemonWithTheHighestAttackScore()", () => {
+    test("BONUS ROUND #1: should include using the `Math.min()` method", () => {
         const hasMathMax = !!findThePokemonWithTheHighestAttackScore.toString().match(/\Math.max(\s*\(|\()/g);
         expect(hasMathMax).toBeTruthy();
     });
 
-    test("BONUS ROUND #2: should include using the `.reduce()` to findThePokemonWithTheHighestAttackScore()", () => {
+    test("BONUS ROUND #2: should include using the `.reduce()` method", () => {
         const hasReduce = !!findThePokemonWithTheHighestAttackScore.toString().match(/\.reduce(\s*\(|\()/g);
         expect(hasReduce).toBeTruthy();   
     });
+
 });
 
 describe("findThePokemonWithTheLowestAttackScore()", () => {});
