@@ -94,6 +94,9 @@
  * EXAMPLE:
  *  findThePokemonWithTheLowestAttackScore(pokemon, nationalNumber);
  *  OUTPUT -> // { pokemonName: nationalNumber }
+ * 
+ * typeof pokemon.national_number = 'string'
+ * 
  */
  const findPokemonByNationalNumber = (pokemon, number) => {};
 
