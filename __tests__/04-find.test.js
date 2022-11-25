@@ -424,4 +424,37 @@ describe("findPokemonByName()", () => {
 
 });
 
-describe("findPokemonByEvolution()", () => {});
+describe("findPokemonByEvolution()", () => {
+
+    test("should use the `.find()` method", () => {
+        const hasFind = !!findPokemonByEvolution.toString().match(/\.find(\s*\(|\()/g);
+        expect(hasFind).toBeTruthy();
+    });
+
+    test("should return an empty object if there are no pokemon", () => {
+        const actual = findPokemonByEvolution([], "Veemon");
+        const expected = {};
+
+        expect(actual).toEqual(expected);
+    });
+
+    test("should return an empty object if the name of the evolution does not match any of the pokemon provided", () => {
+        const actual = findPokemonByEvolution(pokemon, "Gatomon");
+        const expected = {};
+
+        expect(actual).toEqual(expected);
+    });
+
+    test("should return the first pokemon that matches the name provided\n", () => {
+        let evolName = "Seadra";
+        const actual = findPokemonByEvolution(pokemon, evolName);
+
+        const keys = Object.keys(actual);
+        expect(keys.length).toEqual(1);
+
+        const name = keys[0];
+        expect(name).toEqual("Horsea");
+        expect(actual[name]).toEqual("Seadra");
+
+    });
+});
