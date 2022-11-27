@@ -3,7 +3,7 @@
  */
 const songData = require("../data/songs");
 const { nums, words } = require("../data/data");
-const examplePokemon = require("../data/poke");
+const pokemon = require("../data/poke");
 
 /**
  * Returns an array of all of the song titles.
@@ -87,7 +87,12 @@ const mapArrayWordsUpperCased = (words) => {};
         Dragon: 3
     };
  */
-const mapCountByType = (pokemon) => {};
+const mapCountByType = (pokemon) => {
+    let pokeCount = {};
+    pokemon.flatMap(poke => poke.type).forEach(ele => pokeCount[ele] = (pokeCount[ele] || 0) + 1);
+    return pokeCount;
+};
+mapCountByType(pokemon);
 
 /**
  * getAverageTotalStatScore()
