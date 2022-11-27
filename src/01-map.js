@@ -12,7 +12,9 @@ const pokemon = require("../data/poke");
  * 
  * MUST USE '.map()'
  */
-const mapSongTitles = ( songs ) => {};
+const mapSongTitles = ( songs ) => {
+    return songs.map( song => song.title );
+};
 
 /**
  * Returns an array of all of the song titles with the artist.
